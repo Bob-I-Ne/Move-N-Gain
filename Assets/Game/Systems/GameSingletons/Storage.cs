@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class Storage : MonoBehaviour
 {
     public static Storage inst;
+    private string currentResource;
+    private string currentHardResource;
     private void Awake()
     {
         if(inst != null)
@@ -33,6 +36,9 @@ public class Storage : MonoBehaviour
         {"NormalRobot", 0},
         {"StrongRobot", 0}
     };
+    
+    public void SetCurrentResource(string resName) => currentResource = resName;
+    public string GetCurrentResource() => currentResource;
     public int GetResourceCount(string resName) => resources[resName];
     public void ChangeResourceCount(string resName, int count) 
     {
