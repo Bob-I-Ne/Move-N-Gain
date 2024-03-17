@@ -6,24 +6,21 @@ using UnityEngine.UI;
 
 public class MainButtonScript : MonoBehaviour
 {
-    public BigButtonSO button_data;
-    private string curr_resource;
-    private AudioClip click_sound;
-
+    public BigButtonSO startButtonData;
+    private BigButtonSO myData;
     void Start()
     {
-        Init(button_data);
+        Init(startButtonData);
     }
     public void Init(BigButtonSO data)
     {
-        GetComponent<Image>().sprite = button_data.sprite;
-        curr_resource = button_data.resource;
-        click_sound = button_data.sound_on_click;
-        Storage.inst.SetCurrentResource(curr_resource);
+        myData = data;
+        GetComponent<Image>().sprite = myData.sprite;
+        Storage.inst.SetCurrentResource(myData.resource);
     }
     public void Clicked()
     {
-        AudioManager.inst.Play(click_sound);
+        AudioManager.inst.Play(myData.soundOnClick);
         Storage.inst.ChangeResourceCount(Storage.inst.GetCurrentResource(), MyBonuses.inst.bonuses["MainButtonClick"]);
     }
 }

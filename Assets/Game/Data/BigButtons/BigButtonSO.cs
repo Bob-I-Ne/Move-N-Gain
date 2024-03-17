@@ -6,8 +6,6 @@ using UnityEngine;
 public class BigButtonSO : ScriptableObject
 {
     public Sprite sprite;
-
     public string resource;
-
-    public AudioClip sound_on_click;
+    public AudioClip soundOnClick;
 }
