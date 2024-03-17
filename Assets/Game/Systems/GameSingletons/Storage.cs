@@ -43,14 +43,14 @@ public class Storage : MonoBehaviour
     public void ChangeResourceCount(string resName, int count) 
     {
         resources[resName] += count;
-        WorldTicker.uiTick.Invoke();
+        if(WorldTicker.uiTick != null) WorldTicker.uiTick.Invoke();
         if(resources[resName] < 0) print("Кто-то позволил ресурсу быть меньше нуля >:("); 
     }
     public int GetBotCount(string resName) => resources[resName];
     public void ChangeBotCount(string resName, int count) 
     {
         resources[resName] += count;
-        WorldTicker.uiTick.Invoke();
+        if(WorldTicker.uiTick != null) WorldTicker.uiTick.Invoke();
         if(resources[resName] < 0) print("Кто-то позволил боту быть меньше нуля >:("); 
     }
 }

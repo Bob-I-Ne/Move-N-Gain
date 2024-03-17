@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68280617acad8614da76ac4518b76b83, type: 3}
   m_Name: MainButtonSO
   m_EditorClassIdentifier: 
-  sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   resource: Wood
-  sound_on_click: {fileID: 0}
+  sound_on_click: {fileID: 8300000, guid: 5d53ab5c1c4cb7b48b7ef14717e48966, type: 3}
