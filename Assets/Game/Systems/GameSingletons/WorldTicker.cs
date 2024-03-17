@@ -29,8 +29,8 @@ public class WorldTicker : MonoBehaviour
     {
         while(true)
         {
-            secTick.Invoke();
-            uiTick.Invoke();
+            if(secTick != null) secTick.Invoke();
+            if(uiTick != null) uiTick.Invoke();
             yield return new WaitForSeconds(1f);
         }
     }

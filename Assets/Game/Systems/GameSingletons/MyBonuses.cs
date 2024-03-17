@@ -18,7 +18,7 @@ public class MyBonuses : MonoBehaviour
         }
     }
 
-    private Dictionary<string, float> bonuses = new Dictionary<string, float>()
+    public Dictionary<string, int> bonuses = new Dictionary<string, int>()
     {
         {"MainButtonClick", 1},
         {"CraftButtonClick", 1},
