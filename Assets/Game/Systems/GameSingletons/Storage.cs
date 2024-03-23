@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Storage : MonoBehaviour
 {
-    public static Storage inst;
+    public static Storage inst = null;
     private string currentResource;
     private string currentHardResource;
     private void Awake()
@@ -46,11 +46,11 @@ public class Storage : MonoBehaviour
         if(WorldTicker.uiTick != null) WorldTicker.uiTick.Invoke();
         if(resources[resName] < 0) print("Кто-то позволил ресурсу быть меньше нуля >:("); 
     }
-    public int GetBotCount(string resName) => resources[resName];
+    public int GetBotCount(string resName) => bots[resName];
     public void ChangeBotCount(string resName, int count) 
     {
-        resources[resName] += count;
+        bots[resName] += count;
         if(WorldTicker.uiTick != null) WorldTicker.uiTick.Invoke();
-        if(resources[resName] < 0) print("Кто-то позволил боту быть меньше нуля >:("); 
+        if(bots[resName] < 0) print("Кто-то позволил боту быть меньше нуля >:("); 
     }
 }
