@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,4 +24,14 @@ public class MyBonuses : MonoBehaviour
         {"MainButtonClick", 1},
         {"CraftButtonClick", 1},
     };
+
+    [Serializable]
+    public class Bonus
+    {
+        public string name;
+        public Type type;
+        public int value;
+
+        public enum Type { percentage, flat }
+    }
 }
